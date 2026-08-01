@@ -181,7 +181,7 @@ export function AppLayout() {
 
       {/* Floating Action Button (FAB) on Mobile */}
       <Link
-        className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full bg-brand px-4 py-3 text-sm font-bold text-white shadow-xl shadow-brand/30 hover:bg-[#1669d1] active:scale-95 transition lg:hidden"
+        className="fixed bottom-[calc(5.25rem+env(safe-area-inset-bottom,0px))] right-4 z-40 flex items-center gap-2 rounded-full bg-brand px-4 py-3 text-sm font-bold text-white shadow-xl shadow-brand/30 hover:bg-[#1669d1] active:scale-95 transition lg:hidden"
         to="/expenses/new"
       >
         <HiPlus className="text-xl" />
@@ -189,7 +189,7 @@ export function AppLayout() {
       </Link>
 
       {/* GPay Authentic Bottom Navigation Bar (Mobile / Tablet) */}
-      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#e4ebf5] bg-white/95 backdrop-blur-md px-2 py-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] lg:hidden">
+      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#e4ebf5] bg-white/95 backdrop-blur-md px-2 pt-1.5 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(0,0,0,0.06)] lg:hidden">
         <div className="mx-auto max-w-md grid grid-cols-5 gap-1">
           {primaryNavigation.map((item) => (
             <NavLink

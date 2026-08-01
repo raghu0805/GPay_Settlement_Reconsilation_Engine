@@ -40,21 +40,25 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth max-w-full overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply min-h-screen bg-[#f6f8fc] font-sans text-text antialiased;
+    @apply min-h-screen bg-[#f6f8fc] font-sans text-text antialiased max-w-full overflow-x-hidden;
     background-image:
       radial-gradient(circle at top left, rgba(26, 115, 232, 0.08), transparent 22%),
       linear-gradient(180deg, #eaf2ff 0px, #f6f8fc 220px);
   }
 
   button,
+  a,
   input,
   select,
   textarea {
     @apply font-sans;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {

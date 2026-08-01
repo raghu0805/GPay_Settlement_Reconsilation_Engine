@@ -129,6 +129,7 @@ export function GPaySendMoneyModal({ isOpen, onClose, recipient, defaultAmount =
             <div className="flex-1 flex flex-col justify-between bg-white select-none overflow-y-auto">
               {/* Top Blue Header Card */}
               <div className="bg-[#1a73e8] text-white p-6 rounded-b-[32px] space-y-3 shadow-md">
+                <div className="w-12 h-1 bg-white/40 rounded-full mx-auto mb-1 sm:hidden" />
                 <div className="flex items-center justify-between">
                   <button type="button" onClick={handleReset} className="p-1 rounded-full hover:bg-white/10">
                     <HiArrowLeft className="text-xl" />
