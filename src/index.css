@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-brand: #1a73e8;
+  --color-brand-soft: #d7e7ff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f9fa;
+  --color-border: #e4ebf5;
+  --color-text: #202124;
+  --color-text-subtle: #5f6368;
+  --color-success: #34a853;
+  --color-warning: #fbbc05;
+  --color-danger: #ea4335;
+  --radius-panel: 28px;
+  --shadow-panel:
+    0 1px 3px rgba(60, 64, 67, 0.14),
+    0 8px 20px rgba(60, 64, 67, 0.08);
+}
+
+@theme inline {
+  --color-brand: var(--color-brand);
+  --color-brand-soft: var(--color-brand-soft);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-subtle: var(--color-text-subtle);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --radius-panel: var(--radius-panel);
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "DM Sans", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-[#f6f8fc] font-sans text-text antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(26, 115, 232, 0.08), transparent 22%),
+      linear-gradient(180deg, #eaf2ff 0px, #f6f8fc 220px);
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply font-sans;
+  }
+
+  ::selection {
+    @apply bg-brand/18 text-text;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply space-y-4 pb-28 lg:space-y-5 lg:pb-10;
+  }
+
+  .page-card {
+    @apply rounded-[var(--radius-panel)] border border-[#e8edf5] bg-white p-5 shadow-[var(--shadow-panel)] lg:p-6;
+  }
+
+  .soft-card {
+    @apply rounded-[24px] border border-[#e8edf5] bg-white shadow-[0_1px_3px_rgba(60,64,67,0.12),0_4px_10px_rgba(60,64,67,0.06)];
+  }
+
+  .label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-text-subtle;
+  }
+
+  .section-title {
+    @apply font-display text-[1.85rem] font-semibold tracking-[-0.04em] text-text lg:text-[2.2rem];
+  }
+
+  .field {
+    @apply h-13 rounded-full border border-[#dce3ed] bg-[#f8fafd] px-4 text-sm text-text outline-none transition duration-200 placeholder:text-text-subtle/70 focus:border-brand focus:ring-4 focus:ring-brand/10;
+  }
+
+  .field-area {
+    @apply min-h-[116px] rounded-[28px] border border-[#dce3ed] bg-[#f8fafd] px-4 py-3 text-sm text-text outline-none transition duration-200 placeholder:text-text-subtle/70 focus:border-brand focus:ring-4 focus:ring-brand/10;
+  }
+
+  .primary-button {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-5 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(26,115,232,0.22)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1669d1] focus:outline-none focus:ring-4 focus:ring-brand/20;
+  }
+
+  .secondary-button {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full border border-transparent bg-[#e9f1ff] px-5 text-sm font-semibold text-text transition duration-200 hover:-translate-y-0.5 hover:bg-[#dfeaff] focus:outline-none focus:ring-4 focus:ring-brand/10;
+  }
+
+  .status-dot {
+    @apply inline-block h-2.5 w-2.5 rounded-full;
+  }
+
+  .chip-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-[#dce3ed] bg-white px-4 py-2 text-sm font-medium text-text transition duration-200 hover:border-brand/30 hover:bg-[#f8fafd];
+  }
+
+  .tonal-surface {
+    @apply rounded-[24px] bg-[#eef3fd];
+  }
+}
+
+@layer utilities {
+  .surface-grid {
+    background-image:
+      linear-gradient(rgba(26, 115, 232, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 115, 232, 0.035) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(26, 115, 232, 0.2);
+    border-radius: 999px;
+  }
+}
